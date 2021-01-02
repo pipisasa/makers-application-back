@@ -1,0 +1,14 @@
+db:
+  postgres: 
+    uri: postgres://localhost:5432/application_form
+    
+  mongo: 
+    uri: mongodb+srv://pipi:dDOi7wfc3DLqmxK2@cluster0.han2q.gcp.mongodb.net/application_platform?retryWrites=true&w=majority
+
+admin:
+  cookie_secret: TRVYqmENPKRyQZrTAzm7D7ykCJtwVvp5aPvcrSY66FgYesdHzq
+
+google:
+  sheets:
+    application: 1N_j5vx1Ux4AvDruZOPpjB5j5Zsen8DLe0A6YUdGl6ks
+    videoAsk: 1ux8oNKN9LNPbQEHm70N_Vco3dDAuYfKe1gg0XOtA3Lw

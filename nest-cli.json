@@ -1,0 +1,61 @@
+{
+  "collection": "@nestjs/schematics",
+  "sourceRoot": "apps/application-form/src",
+  "assets": [
+    "**/*.yml",
+    "**/*.tsx"
+  ],
+  "monorepo": true,
+  "root": "apps/application-form",
+  "compilerOptions": {
+    "webpack": false,
+    "tsConfigPath": "apps/application-form/tsconfig.app.json"
+  },
+  "projects": {
+    "application-form": {
+      "type": "application",
+      "root": "apps/application-form",
+      "entryFile": "main",
+      "sourceRoot": "apps/application-form/src",
+      "compilerOptions": {
+        "tsConfigPath": "apps/application-form/tsconfig.app.json"
+      }
+    },
+    "admin": {
+      "type": "application",
+      "root": "apps/admin",
+      "entryFile": "main",
+      "sourceRoot": "apps/admin/src",
+      "compilerOptions": {
+        "tsConfigPath": "apps/admin/tsconfig.app.json"
+      }
+    },
+    "db": {
+      "type": "library",
+      "root": "libs/db",
+      "entryFile": "index",
+      "sourceRoot": "libs/db/src",
+      "compilerOptions": {
+        "tsConfigPath": "libs/db/tsconfig.lib.json"
+      }
+    },
+    "config": {
+      "type": "library",
+      "root": "libs/config",
+      "entryFile": "index",
+      "sourceRoot": "libs/config/src",
+      "compilerOptions": {
+        "tsConfigPath": "libs/config/tsconfig.lib.json"
+      }
+    },
+    "google-sheets": {
+      "type": "library",
+      "root": "libs/google-sheets",
+      "entryFile": "index",
+      "sourceRoot": "libs/google-sheets/src",
+      "compilerOptions": {
+        "tsConfigPath": "libs/google-sheets/tsconfig.lib.json"
+      }
+    }
+  }
+}
