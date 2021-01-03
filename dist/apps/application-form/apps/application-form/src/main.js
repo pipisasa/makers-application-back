@@ -16,8 +16,8 @@ const app_module_1 = require("./app.module");
 function bootstrap() {
     return __awaiter(this, void 0, void 0, function* () {
         const httpsOptions = {
-            key: fs_1.default.readFileSync('./secrets/private-key.pem'),
-            cert: fs_1.default.readFileSync('./secrets/public-certificate.pem'),
+            key: fs_1.default.readFileSync('key.pem'),
+            cert: fs_1.default.readFileSync('cert.pem'),
         };
         const app = yield core_1.NestFactory.create(app_module_1.AppModule, {
             bodyParser: true,
