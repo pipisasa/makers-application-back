@@ -6,6 +6,8 @@ export const databaseProviders = [
   {
     provide: 'SEQUELIZE',
     useFactory: async () => {
+      console.log("DATABASE_URI", process.env.DATABASE_URL);
+
       const sequelize = new Sequelize(process.env.DATABASE_URL || configuration().db.postgres.uri, {
         logging: false,
       });
