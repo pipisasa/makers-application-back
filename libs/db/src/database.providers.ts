@@ -13,7 +13,9 @@ export const databaseProviders = [
 
       const sequelize = new Sequelize(configuration().db.postgres.heroku, {
         logging: false,
-        ssl: false,
+        dialectOptions: {
+          ssl: true
+        },
         dialect:  'postgres',
         protocol: 'postgres',
         port: dbConfig.port,
