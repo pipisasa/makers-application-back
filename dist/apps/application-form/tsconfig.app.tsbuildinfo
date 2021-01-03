@@ -5937,7 +5937,7 @@
         "affectsGlobalScope": false
       },
       "../../../apps/application-form/src/main.ts": {
-        "version": "a9c8dc80907028a3b7b9f7eff9e0b7c7a7202e66867060aadb9dd0b40c18f515",
+        "version": "f85d0adf2b62a542ff24b827c5edb0bb175434729127614e9d66d978e54ddaa1",
         "signature": "8e609bb71c20b858c77f0e9f90bb1319db8477b13f9f965f1a1e18524bf50881",
         "affectsGlobalScope": false
       },
@@ -6404,6 +6404,7 @@
         "../../../node_modules/@nestjs/common/index.d.ts",
         "../../../node_modules/@nestjs/core/index.d.ts",
         "../../../node_modules/@types/node/fs.d.ts",
+        "../../../node_modules/@types/node/path.d.ts",
         "../../../node_modules/@types/react/jsx-runtime.d.ts"
       ],
       "../../../apps/application-form/src/modules/user/dto/user.dto.ts": [

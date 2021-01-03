@@ -11,17 +11,11 @@ var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, ge
 Object.defineProperty(exports, "__esModule", { value: true });
 const common_1 = require("@nestjs/common");
 const core_1 = require("@nestjs/core");
-const fs_1 = require("fs");
 const app_module_1 = require("./app.module");
 function bootstrap() {
     return __awaiter(this, void 0, void 0, function* () {
-        const httpsOptions = {
-            key: fs_1.readFileSync('key.pem'),
-            cert: fs_1.readFileSync('cert.pem'),
-        };
         const app = yield core_1.NestFactory.create(app_module_1.AppModule, {
             bodyParser: true,
-            httpsOptions,
         });
         app.useGlobalPipes(new common_1.ValidationPipe({
             transform: true,
