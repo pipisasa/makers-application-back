@@ -5937,7 +5937,7 @@
         "affectsGlobalScope": false
       },
       "../../../apps/application-form/src/main.ts": {
-        "version": "9b1f28e26338bc8776d6488b1562ef4610f807590b670a01c517f631dd79b4d2",
+        "version": "a9c8dc80907028a3b7b9f7eff9e0b7c7a7202e66867060aadb9dd0b40c18f515",
         "signature": "8e609bb71c20b858c77f0e9f90bb1319db8477b13f9f965f1a1e18524bf50881",
         "affectsGlobalScope": false
       },
