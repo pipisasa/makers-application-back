@@ -11,7 +11,7 @@
     "build": "nest build",
     "format": "prettier --write \"apps/**/*.ts\" \"libs/**/*.ts\"",
     "start_": "nest start",
-    "start": "DATABASE_URL=$(heroku config:get DATABASE_URL -a infinite-shore-08073) node dist/apps/application-form/apps/application-form/src/main",
+    "start": "sslmode=require DATABASE_URL=$(heroku config:get DATABASE_URL -a infinite-shore-08073) node dist/apps/application-form/apps/application-form/src/main",
     "start:dev": "nest start --watch",
     "start:debug": "nest start --debug --watch",
     "start:prod": "node dist/apps/application-form/apps/application-form/src/main",
