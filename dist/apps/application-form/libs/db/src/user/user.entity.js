@@ -23,7 +23,7 @@ __decorate([
     __metadata("design:type", String)
 ], User.prototype, "email", void 0);
 __decorate([
-    sequelize_typescript_1.Column({ allowNull: false, unique: true }),
+    sequelize_typescript_1.Column({ allowNull: !false, unique: true }),
     __metadata("design:type", String)
 ], User.prototype, "google_uid", void 0);
 __decorate([

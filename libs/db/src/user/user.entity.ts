@@ -17,7 +17,7 @@ export class User extends Model<User> {
   @Column({ unique: true, allowNull: false })
   email: string;
 
-  @Column({ allowNull: false, unique: true })
+  @Column({ allowNull: !false, unique: true })
   google_uid: string;
 
   @Column

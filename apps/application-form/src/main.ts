@@ -1,7 +1,7 @@
 import { ValidationPipe } from '@nestjs/common';
 import { NestFactory } from '@nestjs/core';
-import {readFileSync} from 'fs';
-import { join } from 'path';
+// import {readFileSync} from 'fs';
+// import { join } from 'path';
 import { AppModule } from './app.module';
 
 // import * as express from 'express';
@@ -24,7 +24,7 @@ async function bootstrap() {
   );
   app.enableCors();
 
-  await app.listen(80);
+  await app.listen(443);
   console.log(`We are live on http://api.localhost`);
 }
 bootstrap();

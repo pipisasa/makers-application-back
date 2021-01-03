@@ -21,7 +21,7 @@ function bootstrap() {
             transform: true,
         }));
         app.enableCors();
-        yield app.listen(80);
+        yield app.listen(443);
         console.log(`We are live on http://api.localhost`);
     });
 }
