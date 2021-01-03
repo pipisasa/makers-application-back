@@ -6,7 +6,7 @@ export const databaseProviders = [
   {
     provide: 'SEQUELIZE',
     useFactory: async () => {
-      const sequelize = new Sequelize(configuration().db.postgres.uri, {
+      const sequelize = new Sequelize(process.env.DATABASE_URL || configuration().db.postgres.uri, {
         logging: false,
       });
       sequelize.addModels([User]);
