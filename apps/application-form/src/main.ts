@@ -24,7 +24,7 @@ async function bootstrap() {
   );
   app.enableCors();
 
-  await app.listen(443);
-  console.log(`We are live on http://api.localhost`);
+  await app.listen(80);
+  console.log(`We are live on http://localhost`);
 }
 bootstrap();
