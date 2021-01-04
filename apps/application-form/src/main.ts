@@ -23,8 +23,8 @@ async function bootstrap() {
     }),
   );
   app.enableCors();
-
-  await app.listen(80);
-  console.log(`We are live on http://localhost`);
+  const PORT = process.env.PORT || 3000;
+  await app.listen(PORT);
+  console.log(`We are live on http://localhost:${PORT}`);
 }
 bootstrap();
