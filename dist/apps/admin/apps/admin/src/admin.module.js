@@ -22,11 +22,13 @@ const admin_service_1 = require("./admin.service");
 const admin_bro_1 = require("admin-bro");
 const nestjs_1 = require("@admin-bro/nestjs");
 const SequelizeAdapter = require("@admin-bro/sequelize");
-const user_entity_1 = require("../../../libs/db/src/user/user.entity");
 const config_1 = require("../../../libs/config/src");
 const google_sheets_1 = require("../../../libs/google-sheets/src");
 const db_1 = require("../../../libs/db/src");
+const serve_static_1 = require("@nestjs/serve-static");
+const path_1 = require("path");
 const _admin_module_1 = require("./_admin.module");
+const admin_resources_1 = require("./admin.resources");
 admin_bro_1.default.registerAdapter(SequelizeAdapter);
 let AdminBroModule = class AdminBroModule {
 };
@@ -37,6 +39,9 @@ AdminBroModule = __decorate([
             admin_service_1.AdminService,
         ],
         imports: [
+            serve_static_1.ServeStaticModule.forRoot({
+                rootPath: path_1.join(__dirname, '..', '..', '..', '..', '..', '..', 'public'),
+            }),
             google_sheets_1.GoogleSheetsModule,
             db_1.DatabaseModule,
             nestjs_1.AdminModule.createAdminAsync({
@@ -48,8 +53,8 @@ AdminBroModule = __decorate([
                 ],
                 useFactory: (adminService) => ({
                     adminBroOptions: {
-                        rootPath: '/admin',
-                        resources: [user_entity_1.User],
+                        rootPath: '/',
+                        resources: admin_resources_1.default,
                         dashboard: {
                             handler: (req) => __awaiter(void 0, void 0, void 0, function* () {
                                 var _a, _b;
@@ -65,7 +70,7 @@ AdminBroModule = __decorate([
                                 }
                                 return Promise.resolve({ message: 'SEND TYPE' });
                             }),
-                            component: admin_bro_1.default.bundle('./Dashboard'),
+                            component: admin_bro_1.default.bundle('./jsx-components/Dashboard'),
                         },
                         branding: {
                             companyName: 'Makers Application Admin Panel',

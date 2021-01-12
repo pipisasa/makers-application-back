@@ -5,13 +5,13 @@ import { AdminService } from './admin.service';
 import AdminBro, { AdminBroOptions } from 'admin-bro';
 import { AdminModule } from '@admin-bro/nestjs';
 import * as SequelizeAdapter from '@admin-bro/sequelize';
-import { User } from '@app/db/user/user.entity';
 import configuration from '@app/config';
 import { GoogleSheetsModule } from '@app/google-sheets';
 import { DatabaseModule } from '@app/db';
-// import { ServeStaticModule } from '@nestjs/serve-static';
-// import { join } from 'path';
+import { ServeStaticModule } from '@nestjs/serve-static';
+import { join } from 'path';
 import { AdminModuleForService } from './_admin.module';
+import AdminBroResources from './admin.resources';
 
 AdminBro.registerAdapter(SequelizeAdapter);
 
@@ -21,9 +21,9 @@ AdminBro.registerAdapter(SequelizeAdapter);
     AdminService,
   ],
   imports: [
-    // ServeStaticModule.forRoot({
-    //   rootPath: join(__dirname, '..', 'public'),
-    // }),
+    ServeStaticModule.forRoot({
+      rootPath: join(__dirname, '..', '..', '..', '..', '..', '..','public'),
+    }),
     GoogleSheetsModule,
     DatabaseModule,
     AdminModule.createAdminAsync({
@@ -37,8 +37,8 @@ AdminBro.registerAdapter(SequelizeAdapter);
         adminService: AdminService,
       ): { adminBroOptions: AdminBroOptions; auth?: any } => ({
         adminBroOptions: {
-          rootPath: '/admin',
-          resources: [User],
+          rootPath: '/',
+          resources: AdminBroResources,
           dashboard: {
             handler: async (req) => {
               const res: any = {
@@ -53,7 +53,7 @@ AdminBro.registerAdapter(SequelizeAdapter);
               }
               return Promise.resolve({ message: 'SEND TYPE' });
             },
-            component: AdminBro.bundle('./Dashboard'),
+            component: AdminBro.bundle('./jsx-components/Dashboard'),
           },
           branding: {
             companyName: 'Makers Application Admin Panel',

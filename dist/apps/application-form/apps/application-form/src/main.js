@@ -21,8 +21,9 @@ function bootstrap() {
             transform: true,
         }));
         app.enableCors();
-        yield app.listen(443);
-        console.log(`We are live on http://api.localhost`);
+        const PORT = process.env.PORT || 3000;
+        yield app.listen(PORT);
+        console.log(`We are live on http://localhost:${PORT}`);
     });
 }
 bootstrap();

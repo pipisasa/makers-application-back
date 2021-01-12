@@ -9,6 +9,8 @@ import { UserModule } from './modules/user/user.module';
 import configuration from '@app/config';
 import { DatabaseModule } from '@app/db';
 import { GoogleSheetsModule } from '@app/google-sheets';
+import { LogicTestModule } from './modules/logic-test/logic-test.module';
+import { TypingTestModule } from './modules/typing-test/typing-test.module';
 
 @Module({
   imports: [
@@ -22,6 +24,8 @@ import { GoogleSheetsModule } from '@app/google-sheets';
     DatabaseModule,
     UserModule,
     GoogleSheetsModule,
+    LogicTestModule,
+    TypingTestModule,
   ],
   controllers: [AppController],
   providers: [AppService],

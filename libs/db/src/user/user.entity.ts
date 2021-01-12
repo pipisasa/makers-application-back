@@ -17,7 +17,7 @@ export class User extends Model<User> {
   @Column({ unique: true, allowNull: false })
   email: string;
 
-  @Column({ allowNull: !false, unique: true })
+  @Column({ allowNull: false, unique: true })
   google_uid: string;
 
   @Column
@@ -53,13 +53,13 @@ export class User extends Model<User> {
   @Column
   is_completed: boolean;
 
-  @Column
+  @Column(DataType.JSONB)
   logic_test_data: string;
 
   @Column
   logic_test_correct_answers: number;
 
-  @Column
+  @Column(DataType.JSONB)
   personality_test_data: string;
 
   @Column

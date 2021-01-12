@@ -1,7 +1,7 @@
 import { Sequelize } from 'sequelize-typescript';
 import configuration from 'libs/config/src/index';
-import { User } from './user/user.entity';
 import * as parseDbUrl from 'parse-database-url';
+import { models } from './models.providers';
 
 export const databaseProviders = [
   {
@@ -31,7 +31,7 @@ export const databaseProviders = [
       //   dialect: dbConfig.driver,
       //   logging: false,
       // });
-      sequelize.addModels([User]);
+      sequelize.addModels(models);
       await sequelize.sync({ force: !true });
       return sequelize;
     },
