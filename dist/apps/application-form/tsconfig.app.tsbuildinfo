@@ -6021,8 +6021,23 @@
         "signature": "b6cc6104143b59a4f44f13a33fead22199b49856137aae2a0544690787966e84",
         "affectsGlobalScope": false
       },
+      "../../../apps/application-form/src/modules/personality-test/personality-test.service.ts": {
+        "version": "b4660ac130b8259ad10e26bb3082d3241eeae1539b6ba1b4b7aeab7fddaf75ea",
+        "signature": "325a94e9c349d393f711293c0740289aae4269121b7b1658c4be33fa5d0483e9",
+        "affectsGlobalScope": false
+      },
+      "../../../apps/application-form/src/modules/personality-test/personality-test.controller.ts": {
+        "version": "83c420038200be20ad8b0d3ea1c3098c56e787fa3b2e11b8e252652a2870106b",
+        "signature": "91df7d28fafb3bfada7fe659953ff6e6aee4436b9d0529c4d3d95abb5dd8eda7",
+        "affectsGlobalScope": false
+      },
+      "../../../apps/application-form/src/modules/personality-test/personality-test.module.ts": {
+        "version": "5c26407f14a332f7bebf3bdf4653dad99b657b09792657fc444989c950b4babd",
+        "signature": "c1088d4c63db346a5d40eb8f25d033873579d46f11fbee7df00b9b18ae2616ae",
+        "affectsGlobalScope": false
+      },
       "../../../apps/application-form/src/app.module.ts": {
-        "version": "3eee18cccd3eef6f53cfba211f869b32574ba5354628163a48c85f5c16cde2b0",
+        "version": "50d9a9c509eb7de834bd0744f74cc4e611be2cd72bf358279d3eb41e3baaade8",
         "signature": "b82491e2990291580288c5602d4c017238977749d52b17391f0e45d9a29be644",
         "affectsGlobalScope": false
       },
@@ -6483,6 +6498,7 @@
         "../../../apps/application-form/src/app.controller.ts",
         "../../../apps/application-form/src/app.service.ts",
         "../../../apps/application-form/src/modules/logic-test/logic-test.module.ts",
+        "../../../apps/application-form/src/modules/personality-test/personality-test.module.ts",
         "../../../apps/application-form/src/modules/typing-test/typing-test.module.ts",
         "../../../apps/application-form/src/modules/user/user.module.ts",
         "../../../libs/config/src/index.ts",
@@ -6519,6 +6535,24 @@
       ],
       "../../../apps/application-form/src/modules/logic-test/logic-test.service.ts": [
         "../../../libs/db/src/logictest/logictest.entity.ts",
+        "../../../node_modules/@nestjs/common/index.d.ts",
+        "../../../node_modules/@types/react/jsx-runtime.d.ts"
+      ],
+      "../../../apps/application-form/src/modules/personality-test/personality-test.controller.ts": [
+        "../../../apps/application-form/src/modules/personality-test/personality-test.service.ts",
+        "../../../libs/db/src/personalitytest/personalitytest.entity.ts",
+        "../../../node_modules/@nestjs/common/index.d.ts",
+        "../../../node_modules/@types/react/jsx-runtime.d.ts"
+      ],
+      "../../../apps/application-form/src/modules/personality-test/personality-test.module.ts": [
+        "../../../apps/application-form/src/modules/personality-test/personality-test.controller.ts",
+        "../../../apps/application-form/src/modules/personality-test/personality-test.service.ts",
+        "../../../libs/db/src/index.ts",
+        "../../../node_modules/@nestjs/common/index.d.ts",
+        "../../../node_modules/@types/react/jsx-runtime.d.ts"
+      ],
+      "../../../apps/application-form/src/modules/personality-test/personality-test.service.ts": [
+        "../../../libs/db/src/personalitytest/personalitytest.entity.ts",
         "../../../node_modules/@nestjs/common/index.d.ts",
         "../../../node_modules/@types/react/jsx-runtime.d.ts"
       ],
@@ -12396,6 +12430,13 @@
       ],
       "../../../apps/application-form/src/modules/logic-test/logic-test.service.ts": [
         "../../../libs/db/src/logictest/logictest.entity.ts"
+      ],
+      "../../../apps/application-form/src/modules/personality-test/personality-test.controller.ts": [
+        "../../../apps/application-form/src/modules/personality-test/personality-test.service.ts",
+        "../../../libs/db/src/personalitytest/personalitytest.entity.ts"
+      ],
+      "../../../apps/application-form/src/modules/personality-test/personality-test.service.ts": [
+        "../../../libs/db/src/personalitytest/personalitytest.entity.ts"
       ],
       "../../../apps/application-form/src/modules/typing-test/typing-test.controller.ts": [
         "../../../apps/application-form/src/modules/typing-test/typing-test.service.ts",

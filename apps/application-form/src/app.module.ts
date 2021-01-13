@@ -11,6 +11,7 @@ import { DatabaseModule } from '@app/db';
 import { GoogleSheetsModule } from '@app/google-sheets';
 import { LogicTestModule } from './modules/logic-test/logic-test.module';
 import { TypingTestModule } from './modules/typing-test/typing-test.module';
+import { PersonalityTestModule } from './modules/personality-test/personality-test.module';
 
 @Module({
   imports: [
@@ -25,6 +26,7 @@ import { TypingTestModule } from './modules/typing-test/typing-test.module';
     UserModule,
     GoogleSheetsModule,
     LogicTestModule,
+    PersonalityTestModule,
     TypingTestModule,
   ],
   controllers: [AppController],

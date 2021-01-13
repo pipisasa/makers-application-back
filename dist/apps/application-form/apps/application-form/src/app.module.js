@@ -19,6 +19,7 @@ const db_1 = require("../../../libs/db/src");
 const google_sheets_1 = require("../../../libs/google-sheets/src");
 const logic_test_module_1 = require("./modules/logic-test/logic-test.module");
 const typing_test_module_1 = require("./modules/typing-test/typing-test.module");
+const personality_test_module_1 = require("./modules/personality-test/personality-test.module");
 let AppModule = class AppModule {
 };
 AppModule = __decorate([
@@ -35,6 +36,7 @@ AppModule = __decorate([
             user_module_1.UserModule,
             google_sheets_1.GoogleSheetsModule,
             logic_test_module_1.LogicTestModule,
+            personality_test_module_1.PersonalityTestModule,
             typing_test_module_1.TypingTestModule,
         ],
         controllers: [app_controller_1.AppController],
