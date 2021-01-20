@@ -9,6 +9,7 @@ import {
   LoginUserDto,
 } from './dto/user.dto';
 import { UserService } from './user.service';
+import { VideoaskResponseDto } from './dto/videoaskData.dto';
 // import { UserEntity } from './entity/user.entity';
 
 @Controller('user')
@@ -79,8 +80,8 @@ export class UserController {
 
   @Post('/webhook')
   async hook(
-    @Body() body: any,
+    @Body() body: VideoaskResponseDto,
   ):Promise<void>{
-    console.log(body)
+    this.userService.saveVideoaskData(body);
   }
 }

@@ -67,6 +67,9 @@ export class User extends Model<User> {
   @Column
   video_ask_contact_id: string;
 
+  @Column(DataType.JSON)
+  videoask_data: string;
+
   @CreatedAt
   createdAt: Date;
 

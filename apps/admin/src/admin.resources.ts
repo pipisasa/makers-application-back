@@ -22,6 +22,12 @@ export const UserResource: ResourceWithOptions = {
           show: AdminBro.bundle('./jsx-components/ShowTestData'),
           edit: AdminBro.bundle('./jsx-components/EditTestData'),
         }
+      },
+      videoask_data:{
+        components:{
+          show: AdminBro.bundle('./jsx-components/VideoAsk/Show'),
+          edit: AdminBro.bundle('./jsx-components/VideoAsk/Show'),
+        }
       }
     }
   },

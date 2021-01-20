@@ -1,4 +1,4 @@
-import { IsEmail, IsEnum, IsInt, IsNotEmpty, IsPhoneNumber, MaxLength } from 'class-validator';
+import { IsEmail, IsEnum, IsInt, IsNotEmpty, IsPhoneNumber, MaxLength, ValidateNested } from 'class-validator';
 
 export class LoginUserDto {
   @IsEmail()
@@ -45,28 +45,43 @@ export class ChangeUserDto {
 
 export class ChangeUserTypingSpeedDto {
   @IsInt()
+  @IsNotEmpty()
   typing_speed: number;
   @IsInt()
+  @IsNotEmpty()
   typing_missings: number;
 }
 
-export class TestItemDto {
-  id: any;
+
+export class TestItemAnswerDto{
+  @IsNotEmpty()
+  id: string;
+  @IsNotEmpty()
   title: string;
-  answers: Array<{
-    id: string;
-    title: string;
-  }>
+}
+export class TestItemDto {
+  @IsNotEmpty()
+  id: any;
+  @IsNotEmpty()
+  title: string;
+  @IsNotEmpty()
+  @ValidateNested()
+  answers: TestItemAnswerDto[]
 };
 
 export class ChangeUserLogicTestDto {
+  @IsNotEmpty()
+  @ValidateNested()
   logic_test_data: TestItemDto[];
 }
 
 export class ChangeUserPersonalityTestDto {
+  @IsNotEmpty()
+  @ValidateNested()
   personality_test_data: TestItemDto[];
 }
 
 export class ChangeUserVideoAskDto {
+  @IsNotEmpty()
   video_ask_contact_id: string;
 }

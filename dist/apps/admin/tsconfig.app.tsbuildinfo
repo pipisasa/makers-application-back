@@ -1992,8 +1992,8 @@
         "affectsGlobalScope": false
       },
       "../../../libs/db/src/user/user.entity.ts": {
-        "version": "35d6242cdc4f5a82ad8e46a7cf5894b0b250e86d5df84b815c365266c2ef473e",
-        "signature": "c482923b626e2e8afcfc157e7086362369d1b971577f5589f10de53ac593db3e",
+        "version": "df2c284a1ba73756594ee566ef4ebde11a8a571d967911a48b9f5d66f4361d27",
+        "signature": "99709f6f522ced8a4f80535640f74550a63f5ebbc2164d83eff95e39aac2c52c",
         "affectsGlobalScope": false
       },
       "../../../node_modules/@types/google-spreadsheet/index.d.ts": {
@@ -8697,7 +8697,7 @@
         "affectsGlobalScope": false
       },
       "../../../apps/admin/src/admin.resources.ts": {
-        "version": "c57802569c596af46a0eaadd75afc47bbb43ef1c7a318cf011e3fae57f98c8d6",
+        "version": "52d0dfb2c429ac0249510498c874b3a316c191fa2ed6ec8e68a6ce077eb17cb8",
         "signature": "6366de9ce88e31a3f508f31be3fff5f599fcd0871be9a76f35bc9bcbf1432e4b",
         "affectsGlobalScope": false
       },
@@ -8734,6 +8734,16 @@
       "../../../apps/admin/src/jsx-components/showtestdata.tsx": {
         "version": "bab1119b8d17d470627ccebfbf37169a77fe6f5be4d319257876d3e15c2b0280",
         "signature": "9163eb54a06f2225d90d76c12dd992292644cdbcfd396d129a25aaad385e6a55",
+        "affectsGlobalScope": false
+      },
+      "../../../apps/admin/src/jsx-components/videoask/types.ts": {
+        "version": "010be51cbea15184128e94e7465170abb97e37489e4800b7f04b20fed0f7346e",
+        "signature": "b09c2ea296c89de6db152254d4e421d1b566716f2d1b4bb449e1944ca08fd67d",
+        "affectsGlobalScope": false
+      },
+      "../../../apps/admin/src/jsx-components/videoask/show.tsx": {
+        "version": "8ab2d77453059449b961f47d69dd8ae097edf3476e2234b1a67b47169c799d53",
+        "signature": "7609bb6a1ff5260eee4575d7bc84381e78dc49f08e374c7aeeb2f15b16600b60",
         "affectsGlobalScope": false
       },
       "../../../node_modules/@types/anymatch/index.d.ts": {
@@ -9214,6 +9224,15 @@
         "../../../node_modules/@types/react/index.d.ts",
         "../../../node_modules/@types/react/jsx-runtime.d.ts",
         "../../../node_modules/admin-bro/index.d.ts"
+      ],
+      "../../../apps/admin/src/jsx-components/videoask/show.tsx": [
+        "../../../apps/admin/src/jsx-components/videoask/types.ts",
+        "../../../node_modules/@types/react/index.d.ts",
+        "../../../node_modules/@types/react/jsx-runtime.d.ts",
+        "../../../node_modules/admin-bro/index.d.ts"
+      ],
+      "../../../apps/admin/src/jsx-components/videoask/types.ts": [
+        "../../../node_modules/@types/react/jsx-runtime.d.ts"
       ],
       "../../../apps/admin/src/main.ts": [
         "../../../apps/admin/src/admin.module.ts",
@@ -18263,6 +18282,10 @@
         "../../../node_modules/@types/react/index.d.ts",
         "../../../node_modules/admin-bro/index.d.ts"
       ],
+      "../../../apps/admin/src/jsx-components/videoask/show.tsx": [
+        "../../../node_modules/@types/react/index.d.ts",
+        "../../../node_modules/admin-bro/index.d.ts"
+      ],
       "../../../libs/config/src/index.ts": [
         "../../../libs/config/src/constants.ts"
       ],
@@ -27256,6 +27279,8 @@
       "../../../apps/admin/src/jsx-components/edittestdata.tsx",
       "../../../apps/admin/src/jsx-components/showimg.tsx",
       "../../../apps/admin/src/jsx-components/showtestdata.tsx",
+      "../../../apps/admin/src/jsx-components/videoask/show.tsx",
+      "../../../apps/admin/src/jsx-components/videoask/types.ts",
       "../../../apps/admin/src/main.ts",
       "../../../libs/config/src/constants.ts",
       "../../../libs/config/src/index.ts",

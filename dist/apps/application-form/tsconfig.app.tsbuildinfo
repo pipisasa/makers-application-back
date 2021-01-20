@@ -2272,8 +2272,8 @@
         "affectsGlobalScope": false
       },
       "../../../libs/db/src/user/user.entity.ts": {
-        "version": "35d6242cdc4f5a82ad8e46a7cf5894b0b250e86d5df84b815c365266c2ef473e",
-        "signature": "c482923b626e2e8afcfc157e7086362369d1b971577f5589f10de53ac593db3e",
+        "version": "df2c284a1ba73756594ee566ef4ebde11a8a571d967911a48b9f5d66f4361d27",
+        "signature": "99709f6f522ced8a4f80535640f74550a63f5ebbc2164d83eff95e39aac2c52c",
         "affectsGlobalScope": false
       },
       "../../../node_modules/class-validator/types/validation/validationerror.d.ts": {
@@ -2892,8 +2892,8 @@
         "affectsGlobalScope": false
       },
       "../../../apps/application-form/src/modules/user/dto/user.dto.ts": {
-        "version": "044ced11c6fd799fba700370e0c15a92f1c115de9dbcec4cba2b0f84e5fe8cee",
-        "signature": "b8008d373c1fa72eb48cb7b66414f6f0f0ab3fa4b7810c342d091a87c670c9e3",
+        "version": "2a533ac06bba9a982a8004477edcaf2bdf22324b55a2b40f90a84771b6bf5842",
+        "signature": "0fc4f3872c77d4745e657ceac085e9c2f6ba2b6953e4e01c6a3b0ecabc9d148a",
         "affectsGlobalScope": false
       },
       "../../../node_modules/@types/google-spreadsheet/index.d.ts": {
@@ -5906,14 +5906,19 @@
         "signature": "2695765fb5017b924787076e714401ed87538148237dadc88dbbfe231513c434",
         "affectsGlobalScope": false
       },
+      "../../../apps/application-form/src/modules/user/dto/videoaskdata.dto.ts": {
+        "version": "abbba76b71c52cad7ad601571db71914311bc8e0d91a4a85c413149a3166c4a1",
+        "signature": "fc0233967b3d0719ef6c6f7dc5288ce7fed3fc51274a1c5b33c033c0b845f59d",
+        "affectsGlobalScope": false
+      },
       "../../../apps/application-form/src/modules/user/user.service.ts": {
-        "version": "a57343f6e5cfc7a3b0c822f4d0193c22b5e27fe46de9b1f7b419e362c4c7c142",
-        "signature": "92641d9f9ff5207c34ea87675fcb4aa47cad67ab32f5bce56f48200c37b81d8c",
+        "version": "2f7439aa01df90dad16d9cef2a172a1463c0e9b2f2aedc049407544c066322a5",
+        "signature": "5baba729ab763984bbc6b8bdc0564fcb126645a69aca3ca37856ee7b60dc3bf8",
         "affectsGlobalScope": false
       },
       "../../../apps/application-form/src/modules/user/user.controller.ts": {
-        "version": "c3c2daa16e6f09781cb3626cbcf013403918510651fc0669d205cf0a89d3bed4",
-        "signature": "34f28947e17c4a87fc612d7f4aa4c3ee0c00f2970037b33b05e269416a0a51d2",
+        "version": "b48274721a4451fc2cb1716201fd26d92c6bc8c5d9335363b19aa4636e40c8ba",
+        "signature": "ddcd933672ef1b228a9f55f5677d42c2b3d3c5b50e3f4a2e7156aec053419365",
         "affectsGlobalScope": false
       },
       "../../../libs/db/src/personalitytest/personalitytest.entity.ts": {
@@ -6331,6 +6336,11 @@
         "signature": "0215efc2c3f40fd9ec91f19d277afc9efba41cee054fd0be4c92e75cb10cf2c0",
         "affectsGlobalScope": false
       },
+      "../../../node_modules/@types/video-react/index.d.ts": {
+        "version": "f750955f9cde1a5ec2a155fe8ff38af57b69701e0a356a635c30aa09bd16b6b7",
+        "signature": "f750955f9cde1a5ec2a155fe8ff38af57b69701e0a356a635c30aa09bd16b6b7",
+        "affectsGlobalScope": false
+      },
       "../../../node_modules/anymatch/index.d.ts": {
         "version": "4fb0b7d532aa6fb850b6cd2f1ee4f00802d877b5c66a51903bc1fb0624126349",
         "signature": "4fb0b7d532aa6fb850b6cd2f1ee4f00802d877b5c66a51903bc1fb0624126349",
@@ -6543,11 +6553,16 @@
         "../../../node_modules/@types/react/jsx-runtime.d.ts",
         "../../../node_modules/class-validator/types/index.d.ts"
       ],
+      "../../../apps/application-form/src/modules/user/dto/videoaskdata.dto.ts": [
+        "../../../node_modules/@types/react/jsx-runtime.d.ts",
+        "../../../node_modules/class-validator/types/index.d.ts"
+      ],
       "../../../apps/application-form/src/modules/user/entity/user.entity.ts": [
         "../../../node_modules/@types/react/jsx-runtime.d.ts"
       ],
       "../../../apps/application-form/src/modules/user/user.controller.ts": [
         "../../../apps/application-form/src/modules/user/dto/user.dto.ts",
+        "../../../apps/application-form/src/modules/user/dto/videoaskdata.dto.ts",
         "../../../apps/application-form/src/modules/user/user.service.ts",
         "../../../libs/db/src/user/user.entity.ts",
         "../../../node_modules/@nestjs/common/index.d.ts",
@@ -6564,6 +6579,7 @@
       ],
       "../../../apps/application-form/src/modules/user/user.service.ts": [
         "../../../apps/application-form/src/modules/user/dto/user.dto.ts",
+        "../../../apps/application-form/src/modules/user/dto/videoaskdata.dto.ts",
         "../../../libs/config/src/index.ts",
         "../../../libs/db/src/logictest/logictest.entity.ts",
         "../../../libs/db/src/user/user.entity.ts",
@@ -12394,11 +12410,13 @@
       ],
       "../../../apps/application-form/src/modules/user/user.controller.ts": [
         "../../../apps/application-form/src/modules/user/dto/user.dto.ts",
+        "../../../apps/application-form/src/modules/user/dto/videoaskdata.dto.ts",
         "../../../apps/application-form/src/modules/user/user.service.ts",
         "../../../libs/db/src/user/user.entity.ts"
       ],
       "../../../apps/application-form/src/modules/user/user.service.ts": [
         "../../../apps/application-form/src/modules/user/dto/user.dto.ts",
+        "../../../apps/application-form/src/modules/user/dto/videoaskdata.dto.ts",
         "../../../libs/db/src/logictest/logictest.entity.ts",
         "../../../libs/db/src/user/user.entity.ts",
         "../../../libs/google-sheets/src/index.ts",
@@ -18180,6 +18198,7 @@
       "../../../apps/application-form/src/modules/typing-test/typing-test.module.ts",
       "../../../apps/application-form/src/modules/typing-test/typing-test.service.ts",
       "../../../apps/application-form/src/modules/user/dto/user.dto.ts",
+      "../../../apps/application-form/src/modules/user/dto/videoaskdata.dto.ts",
       "../../../apps/application-form/src/modules/user/entity/user.entity.ts",
       "../../../apps/application-form/src/modules/user/user.controller.ts",
       "../../../apps/application-form/src/modules/user/user.module.ts",
@@ -18505,6 +18524,7 @@
       "../../../node_modules/@types/tapable/index.d.ts",
       "../../../node_modules/@types/uglify-js/index.d.ts",
       "../../../node_modules/@types/validator/index.d.ts",
+      "../../../node_modules/@types/video-react/index.d.ts",
       "../../../node_modules/@types/webpack-sources/index.d.ts",
       "../../../node_modules/@types/webpack-sources/lib/cachedsource.d.ts",
       "../../../node_modules/@types/webpack-sources/lib/compatsource.d.ts",

@@ -26,6 +26,7 @@ const common_1 = require("@nestjs/common");
 const user_entity_1 = require("../../../../../libs/db/src/user/user.entity");
 const user_dto_1 = require("./dto/user.dto");
 const user_service_1 = require("./user.service");
+const videoaskData_dto_1 = require("./dto/videoaskData.dto");
 let UserController = class UserController {
     constructor(userService) {
         this.userService = userService;
@@ -74,7 +75,7 @@ let UserController = class UserController {
     }
     hook(body) {
         return __awaiter(this, void 0, void 0, function* () {
-            console.log(body);
+            this.userService.saveVideoaskData(body);
         });
     }
 };
@@ -142,7 +143,7 @@ __decorate([
     common_1.Post('/webhook'),
     __param(0, common_1.Body()),
     __metadata("design:type", Function),
-    __metadata("design:paramtypes", [Object]),
+    __metadata("design:paramtypes", [videoaskData_dto_1.VideoaskResponseDto]),
     __metadata("design:returntype", Promise)
 ], UserController.prototype, "hook", null);
 UserController = __decorate([

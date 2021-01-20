@@ -3533,7 +3533,7 @@ deep-is@^0.1.3, deep-is@~0.1.3:
   resolved "https://registry.yarnpkg.com/deep-is/-/deep-is-0.1.3.tgz#b369d6fb5dbc13eecf524f91b070feedc357cf34"
   integrity sha1-s2nW+128E+7PUk+RsHD+7cNXzzQ=
 
-deepmerge@^4.2.2:
+deepmerge@^4.0.0, deepmerge@^4.2.2:
   version "4.2.2"
   resolved "https://registry.yarnpkg.com/deepmerge/-/deepmerge-4.2.2.tgz#44d2ea3679b8f4d4ffba33f03d865fc1e7bf4955"
   integrity sha512-FJ3UgI4gIl+PHZm53knsuSFpE+nESMr7M4v9QcgB7S63Kj/6WqMiFQJpBBYz1Pt+66bZpP3Q7Lye0Oo9MPKEdg==
@@ -6011,6 +6011,11 @@ lines-and-columns@^1.1.6:
   resolved "https://registry.yarnpkg.com/lines-and-columns/-/lines-and-columns-1.1.6.tgz#1c00c743b433cd0a4e80758f7b64a57440d9ff00"
   integrity sha1-HADHQ7QzzQpOgHWPe2SldEDZ/wA=
 
+load-script@^1.0.0:
+  version "1.0.0"
+  resolved "https://registry.yarnpkg.com/load-script/-/load-script-1.0.0.tgz#0491939e0bee5643ee494a7e3da3d2bac70c6ca4"
+  integrity sha1-BJGTngvuVkPuSUp+PaPSuscMbKQ=
+
 loader-runner@^4.1.0:
   version "4.1.0"
   resolved "https://registry.yarnpkg.com/loader-runner/-/loader-runner-4.1.0.tgz#f70bc0c29edbabdf2043e7ee73ccc3fe1c96b42d"
@@ -6181,7 +6186,7 @@ memfs@^3.1.2:
   dependencies:
     fs-monkey "1.0.1"
 
-memoize-one@^5.0.0:
+memoize-one@^5.0.0, memoize-one@^5.1.1:
   version "5.1.1"
   resolved "https://registry.yarnpkg.com/memoize-one/-/memoize-one-5.1.1.tgz#047b6e3199b508eaec03504de71229b8eb1d75c0"
   integrity sha512-HKeeBpWvqiVJD57ZUAsJNm71eHTykffzcLZVYWiVfQeI1rJtuEaS7hQiEpWfVVk18donPwJEcFKIkCmPJNOhHA==
@@ -7240,6 +7245,11 @@ react-dom@^17.0.1:
     object-assign "^4.1.1"
     scheduler "^0.20.1"
 
+react-fast-compare@^3.0.1:
+  version "3.2.0"
+  resolved "https://registry.yarnpkg.com/react-fast-compare/-/react-fast-compare-3.2.0.tgz#641a9da81b6a6320f270e89724fb45a0b39e43bb"
+  integrity sha512-rtGImPZ0YyLrscKI9xTpV8psd6I8VAtjKCzQDlzyDvqJA8XOW78TXYQwNRNd8g8JZnDu8q9Fu/1v4HPAVwVdHA==
+
 react-i18next@^11.3.1:
   version "11.8.4"
   resolved "https://registry.yarnpkg.com/react-i18next/-/react-i18next-11.8.4.tgz#5407d2edcaa704c38e4034e7ac06413914ed6e6d"
@@ -7269,6 +7279,17 @@ react-onclickoutside@^6.9.0:
   version "6.9.0"
   resolved "https://registry.yarnpkg.com/react-onclickoutside/-/react-onclickoutside-6.9.0.tgz#a54bc317ae8cf6131a5d78acea55a11067f37a1f"
   integrity sha512-8ltIY3bC7oGhj2nPAvWOGi+xGFybPNhJM0V1H8hY/whNcXgmDeaeoCMPPd8VatrpTsUWjb/vGzrmu6SrXVty3A==
+
+react-player@^2.8.1:
+  version "2.8.1"
+  resolved "https://registry.yarnpkg.com/react-player/-/react-player-2.8.1.tgz#1fe315ae960ffc5e1588aefb336beb2dd34fcc08"
+  integrity sha512-gv7I8QU5k+8YHmHOiOxDFs8ZWU7pm7UPHjmMLfCBe+vcIEVpZ53w4b0hKF4WGVhyLXvBW2/c3A4nXJctVqvhsw==
+  dependencies:
+    deepmerge "^4.0.0"
+    load-script "^1.0.0"
+    memoize-one "^5.1.1"
+    prop-types "^15.7.2"
+    react-fast-compare "^3.0.1"
 
 react-popper@^1.3.4:
   version "1.3.7"

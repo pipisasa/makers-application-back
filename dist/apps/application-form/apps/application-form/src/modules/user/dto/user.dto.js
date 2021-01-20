@@ -9,7 +9,7 @@ var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.ChangeUserVideoAskDto = exports.ChangeUserPersonalityTestDto = exports.ChangeUserLogicTestDto = exports.TestItemDto = exports.ChangeUserTypingSpeedDto = exports.ChangeUserDto = exports.LoginUserDto = void 0;
+exports.ChangeUserVideoAskDto = exports.ChangeUserPersonalityTestDto = exports.ChangeUserLogicTestDto = exports.TestItemDto = exports.TestItemAnswerDto = exports.ChangeUserTypingSpeedDto = exports.ChangeUserDto = exports.LoginUserDto = void 0;
 const class_validator_1 = require("class-validator");
 class LoginUserDto {
 }
@@ -63,24 +63,64 @@ class ChangeUserTypingSpeedDto {
 }
 __decorate([
     class_validator_1.IsInt(),
+    class_validator_1.IsNotEmpty(),
     __metadata("design:type", Number)
 ], ChangeUserTypingSpeedDto.prototype, "typing_speed", void 0);
 __decorate([
     class_validator_1.IsInt(),
+    class_validator_1.IsNotEmpty(),
     __metadata("design:type", Number)
 ], ChangeUserTypingSpeedDto.prototype, "typing_missings", void 0);
 exports.ChangeUserTypingSpeedDto = ChangeUserTypingSpeedDto;
+class TestItemAnswerDto {
+}
+__decorate([
+    class_validator_1.IsNotEmpty(),
+    __metadata("design:type", String)
+], TestItemAnswerDto.prototype, "id", void 0);
+__decorate([
+    class_validator_1.IsNotEmpty(),
+    __metadata("design:type", String)
+], TestItemAnswerDto.prototype, "title", void 0);
+exports.TestItemAnswerDto = TestItemAnswerDto;
 class TestItemDto {
 }
+__decorate([
+    class_validator_1.IsNotEmpty(),
+    __metadata("design:type", Object)
+], TestItemDto.prototype, "id", void 0);
+__decorate([
+    class_validator_1.IsNotEmpty(),
+    __metadata("design:type", String)
+], TestItemDto.prototype, "title", void 0);
+__decorate([
+    class_validator_1.IsNotEmpty(),
+    class_validator_1.ValidateNested(),
+    __metadata("design:type", Array)
+], TestItemDto.prototype, "answers", void 0);
 exports.TestItemDto = TestItemDto;
 ;
 class ChangeUserLogicTestDto {
 }
+__decorate([
+    class_validator_1.IsNotEmpty(),
+    class_validator_1.ValidateNested(),
+    __metadata("design:type", Array)
+], ChangeUserLogicTestDto.prototype, "logic_test_data", void 0);
 exports.ChangeUserLogicTestDto = ChangeUserLogicTestDto;
 class ChangeUserPersonalityTestDto {
 }
+__decorate([
+    class_validator_1.IsNotEmpty(),
+    class_validator_1.ValidateNested(),
+    __metadata("design:type", Array)
+], ChangeUserPersonalityTestDto.prototype, "personality_test_data", void 0);
 exports.ChangeUserPersonalityTestDto = ChangeUserPersonalityTestDto;
 class ChangeUserVideoAskDto {
 }
+__decorate([
+    class_validator_1.IsNotEmpty(),
+    __metadata("design:type", String)
+], ChangeUserVideoAskDto.prototype, "video_ask_contact_id", void 0);
 exports.ChangeUserVideoAskDto = ChangeUserVideoAskDto;
 //# sourceMappingURL=user.dto.js.map

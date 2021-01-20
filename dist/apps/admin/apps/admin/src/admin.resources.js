@@ -24,6 +24,12 @@ exports.UserResource = {
                     show: admin_bro_1.default.bundle('./jsx-components/ShowTestData'),
                     edit: admin_bro_1.default.bundle('./jsx-components/EditTestData'),
                 }
+            },
+            videoask_data: {
+                components: {
+                    show: admin_bro_1.default.bundle('./jsx-components/VideoAsk/Show'),
+                    edit: admin_bro_1.default.bundle('./jsx-components/VideoAsk/Show'),
+                }
             }
         }
     },

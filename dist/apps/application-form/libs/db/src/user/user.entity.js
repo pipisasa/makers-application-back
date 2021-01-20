@@ -88,6 +88,10 @@ __decorate([
     __metadata("design:type", String)
 ], User.prototype, "video_ask_contact_id", void 0);
 __decorate([
+    sequelize_typescript_1.Column(sequelize_typescript_1.DataType.JSON),
+    __metadata("design:type", String)
+], User.prototype, "videoask_data", void 0);
+__decorate([
     sequelize_typescript_1.CreatedAt,
     __metadata("design:type", Date)
 ], User.prototype, "createdAt", void 0);

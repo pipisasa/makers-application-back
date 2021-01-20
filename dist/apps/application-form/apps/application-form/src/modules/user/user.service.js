@@ -113,6 +113,14 @@ let UserService = class UserService {
             return user;
         });
     }
+    saveVideoaskData(data) {
+        return __awaiter(this, void 0, void 0, function* () {
+            const video_ask_contact_id = data.contact.contact_id;
+            yield this.usersRepository.update({ videoask_data: data.contact }, {
+                returning: true, where: { video_ask_contact_id }
+            });
+        });
+    }
     setCompleteForm(id) {
         return __awaiter(this, void 0, void 0, function* () {
             const [, [user]] = yield this.usersRepository.update({ is_completed: true }, {

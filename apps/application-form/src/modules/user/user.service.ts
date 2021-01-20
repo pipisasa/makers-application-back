@@ -13,6 +13,7 @@ import {
 } from './dto/user.dto';
 import { headerRows } from '@app/config';
 import { LogicTest } from '@app/db/logicTest/logicTest.entity';
+import { VideoaskResponseDto } from './dto/videoaskData.dto';
 
 type GSRow =
   | { [header: string]: string | number | boolean }
@@ -138,6 +139,18 @@ export class UserService {
       },
     );
     return user;
+  }
+
+  async saveVideoaskData(
+    data: VideoaskResponseDto,
+  ):Promise<void>{
+    const video_ask_contact_id = data.contact.contact_id;
+    await this.usersRepository.update(
+      {videoask_data: data.contact},
+      {
+        returning: true, where: { video_ask_contact_id }
+      },
+    );
   }
 
   async setCompleteForm(id: string):Promise<User> {
