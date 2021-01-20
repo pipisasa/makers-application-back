@@ -8,7 +8,23 @@ import CustomFileProvider from './helpers/CustomFileProvider';
 
 export const UserResource: ResourceWithOptions = {
   resource: User,
-  options: {},
+  options: {
+    listProperties: ['email', 'name', 'is_completed', 'is_confirmed'],
+    properties:{
+      personality_test_data:{
+        components:{
+          show: AdminBro.bundle('./jsx-components/ShowTestData'),
+          edit: AdminBro.bundle('./jsx-components/EditTestData'),
+        }
+      },
+      logic_test_data:{
+        components:{
+          show: AdminBro.bundle('./jsx-components/ShowTestData'),
+          edit: AdminBro.bundle('./jsx-components/EditTestData'),
+        }
+      }
+    }
+  },
 }
 
 export const LogicTestResource: ResourceWithOptions = {

@@ -9,8 +9,10 @@ import {
   ChangeUserPersonalityTestDto,
   ChangeUserTypingSpeedDto,
   ChangeUserVideoAskDto,
+  TestItemDto,
 } from './dto/user.dto';
 import { headerRows } from '@app/config';
+import { LogicTest } from '@app/db/logicTest/logicTest.entity';
 
 type GSRow =
   | { [header: string]: string | number | boolean }
@@ -20,6 +22,7 @@ type GSRow =
 export class UserService {
   constructor(
     @Inject(User.PROVIDE_NAME) private readonly usersRepository: typeof User,
+    @Inject(LogicTest.PROVIDE_NAME) private readonly logicTestRepository: typeof LogicTest,
     private readonly sheetService: GoogleSheetsService,
     @Inject('GOOGLE_SHEETS_USERS') private sheet: GoogleSpreadsheetWorksheet,
   ) {}
@@ -47,11 +50,9 @@ export class UserService {
   }
 
   async findOrCreate(email: string, google_uid: string): Promise<User> {
-    const candidate = await this.usersRepository.findOne({
-      where: { email, google_uid },
-    });
+    const candidate = await this.usersRepository.findByPk(google_uid);
     if (candidate) return candidate;
-    const newUser = new this.usersRepository({ email, google_uid });
+    const newUser = new this.usersRepository({ email, _id: google_uid });
     await newUser.save();
     return newUser;
   }
@@ -61,7 +62,7 @@ export class UserService {
     changeUserDto: ChangeUserDto,
   ): Promise<User> {
     const res = await this.usersRepository.update(changeUserDto, {
-      returning: true, where: { id }
+      returning: true, where: { _id: id }
     });
     return res[1][0];
   }
@@ -73,7 +74,7 @@ export class UserService {
     const [, [user]] = await this.usersRepository.update(
       changeUserTypingSpeed,
       {
-        returning: true, where: { id }
+        returning: true, where: { _id: id }
       },
     );
     return user;
@@ -81,12 +82,33 @@ export class UserService {
 
   async changeLogicTest(
     id: any,
-    changeUserLogicTestDto: ChangeUserLogicTestDto,
+    {logic_test_data}: ChangeUserLogicTestDto,
   ): Promise<User> {
+
+    const logicTests = await this.logicTestRepository.findAll();
+
+    // const logic_test_correct_answers:number = logicTests.reduce((a, b)=>{
+    //   return a + (b.correct_answers.split(";").filter(item=>item!="").includes(logic_test_data[b.id]) ? 1 : 0)
+    // }, 0)
+
+    const logicTestData:{
+      [key: string]: TestItemDto
+    } = {};
+    logic_test_data.forEach(item=>logicTestData[item.id]=item);
+
+    const logic_test_correct_answers:number = logicTests.reduce((a,b)=>{
+      // let isCorrect = logicTestData[b.id].answers.every(answer => new RegExp(`^|\\;${answer.title}$|\\;`,'gi').test(b.correct_answers));
+      let isCorrect = b.correct_answers.split(';').sort().join(';') === logicTestData[b.id].answers.map(i=>i.title).sort().join(';');
+      return a + (isCorrect ? 1 : 0);
+    }, 0);
+
     const [, [user]] = await this.usersRepository.update(
-      changeUserLogicTestDto,
       {
-        returning: true, where: { id }
+        logic_test_data,
+        logic_test_correct_answers
+      },
+      {
+        returning: true, where: { _id: id }
       },
     );
     return user;
@@ -94,12 +116,12 @@ export class UserService {
 
   async changePersonalityTest(
     id: any,
-    changeUserPersonalityTestDto: ChangeUserPersonalityTestDto,
+    {personality_test_data}: ChangeUserPersonalityTestDto,
   ): Promise<User> {
     const [, [user]] = await this.usersRepository.update(
-      changeUserPersonalityTestDto,
+      {personality_test_data},
       {
-        returning: true, where: { id }
+        returning: true, where: { _id: id }
       },
     );
     return user;
@@ -107,19 +129,29 @@ export class UserService {
 
   async changeVideoAsk(
     id: any,
-    changeUserVideoAskDto: ChangeUserVideoAskDto,
+    {video_ask_contact_id}: ChangeUserVideoAskDto,
   ): Promise<User> {
     const [, [user]] = await this.usersRepository.update(
-      changeUserVideoAskDto,
+      {video_ask_contact_id},
       {
-        returning: true, where: { id }
+        returning: true, where: { _id: id }
+      },
+    );
+    return user;
+  }
+
+  async setCompleteForm(id: string):Promise<User> {
+    const [, [user]] = await this.usersRepository.update(
+      {is_completed: true},
+      {
+        returning: true, where: { _id: id }
       },
     );
     return user;
   }
 
   async deleteUser(id: any) {
-    const res = await this.usersRepository.destroy({ where: { id } });
+    const res = await this.usersRepository.destroy({ where: { _id: id } });
     return res;
   }
 }

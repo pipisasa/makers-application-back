@@ -26,14 +26,13 @@ const common_1 = require("@nestjs/common");
 const user_entity_1 = require("../../../../../libs/db/src/user/user.entity");
 const user_dto_1 = require("./dto/user.dto");
 const user_service_1 = require("./user.service");
-const user_entity_2 = require("./entity/user.entity");
 let UserController = class UserController {
     constructor(userService) {
         this.userService = userService;
     }
     getAll() {
         return __awaiter(this, void 0, void 0, function* () {
-            return (yield this.userService.findAll()).map(item => new user_entity_2.UserEntity(item.toJSON()));
+            return yield this.userService.findAll();
         });
     }
     login(body) {
@@ -52,24 +51,34 @@ let UserController = class UserController {
             return yield this.userService.changeTypingSpeed(id, body);
         });
     }
-    changeLogicTest(id, body) {
+    changeLogicTest(id, { logic_test_data }) {
         return __awaiter(this, void 0, void 0, function* () {
-            return yield this.userService.changeLogicTest(id, body);
+            return yield this.userService.changeLogicTest(id, { logic_test_data });
         });
     }
-    changePersonalityTest(id, body) {
+    changePersonalityTest(id, { personality_test_data }) {
         return __awaiter(this, void 0, void 0, function* () {
-            return yield this.userService.changePersonalityTest(id, body);
+            return yield this.userService.changePersonalityTest(id, { personality_test_data });
         });
     }
-    changeVideoAsk(id, body) {
+    changeVideoAsk(id, { video_ask_contact_id }) {
         return __awaiter(this, void 0, void 0, function* () {
-            return yield this.userService.changeVideoAsk(id, body);
+            console.log("VideoAsk: ", id, video_ask_contact_id);
+            return yield this.userService.changeVideoAsk(id, { video_ask_contact_id });
+        });
+    }
+    setCompleteUserForm(id) {
+        return __awaiter(this, void 0, void 0, function* () {
+            return yield this.userService.setCompleteForm(id);
+        });
+    }
+    hook(body) {
+        return __awaiter(this, void 0, void 0, function* () {
+            console.log(body);
         });
     }
 };
 __decorate([
-    common_1.UseInterceptors(common_1.ClassSerializerInterceptor),
     common_1.Get(),
     __metadata("design:type", Function),
     __metadata("design:paramtypes", []),
@@ -122,6 +131,20 @@ __decorate([
     __metadata("design:paramtypes", [String, user_dto_1.ChangeUserVideoAskDto]),
     __metadata("design:returntype", Promise)
 ], UserController.prototype, "changeVideoAsk", null);
+__decorate([
+    common_1.Patch(':id/complete'),
+    __param(0, common_1.Param('id')),
+    __metadata("design:type", Function),
+    __metadata("design:paramtypes", [String]),
+    __metadata("design:returntype", Promise)
+], UserController.prototype, "setCompleteUserForm", null);
+__decorate([
+    common_1.Post('/webhook'),
+    __param(0, common_1.Body()),
+    __metadata("design:type", Function),
+    __metadata("design:paramtypes", [Object]),
+    __metadata("design:returntype", Promise)
+], UserController.prototype, "hook", null);
 UserController = __decorate([
     common_1.Controller('user'),
     __metadata("design:paramtypes", [user_service_1.UserService])

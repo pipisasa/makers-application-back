@@ -9,16 +9,16 @@ import {
   LoginUserDto,
 } from './dto/user.dto';
 import { UserService } from './user.service';
-import { UserEntity } from './entity/user.entity';
+// import { UserEntity } from './entity/user.entity';
 
 @Controller('user')
 export class UserController {
   constructor(private readonly userService: UserService) {}
 
-  @UseInterceptors(ClassSerializerInterceptor)
+  // @UseInterceptors(ClassSerializerInterceptor)
   @Get()
-  async getAll(): Promise<UserEntity[]> {
-    return (await this.userService.findAll()).map(item=>new UserEntity(item.toJSON()));
+  async getAll(): Promise<User[]> {
+    return await this.userService.findAll();
   }
 
   @Post('login')
@@ -41,31 +41,46 @@ export class UserController {
   async changeTypingSpeed(
     @Param('id') id: string,
     @Body() body: ChangeUserTypingSpeedDto,
-  ) {
+  ): Promise<User>{
     return await this.userService.changeTypingSpeed(id, body);
   }
 
   @Patch(':id/logic-test')
   async changeLogicTest(
     @Param('id') id: string,
-    @Body() body: ChangeUserLogicTestDto,
-  ) {
-    return await this.userService.changeLogicTest(id, body);
+    @Body() {logic_test_data}: ChangeUserLogicTestDto,
+  ): Promise<User>{
+    return await this.userService.changeLogicTest(id, {logic_test_data});
   }
 
   @Patch(':id/personality-test')
   async changePersonalityTest(
     @Param('id') id: string,
-    @Body() body: ChangeUserPersonalityTestDto,
-  ) {
-    return await this.userService.changePersonalityTest(id, body);
+    @Body() {personality_test_data}: ChangeUserPersonalityTestDto,
+  ): Promise<User>{
+    return await this.userService.changePersonalityTest(id, {personality_test_data});
   }
 
   @Patch(':id/video-ask')
   async changeVideoAsk(
     @Param('id') id: string,
-    @Body() body: ChangeUserVideoAskDto,
-  ) {
-    return await this.userService.changeVideoAsk(id, body);
+    @Body() {video_ask_contact_id}: ChangeUserVideoAskDto,
+  ): Promise<User>{
+    console.log("VideoAsk: ", id, video_ask_contact_id);
+    return await this.userService.changeVideoAsk(id, {video_ask_contact_id});
+  }
+
+  @Patch(':id/complete')
+  async setCompleteUserForm(
+    @Param('id') id: string,
+  ): Promise<User>{
+    return await this.userService.setCompleteForm(id);
+  }
+
+  @Post('/webhook')
+  async hook(
+    @Body() body: any,
+  ):Promise<void>{
+    console.log(body)
   }
 }

@@ -9,7 +9,7 @@ var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.ChangeUserVideoAskDto = exports.ChangeUserPersonalityTestDto = exports.ChangeUserLogicTestDto = exports.ChangeUserTypingSpeedDto = exports.ChangeUserDto = exports.LoginUserDto = void 0;
+exports.ChangeUserVideoAskDto = exports.ChangeUserPersonalityTestDto = exports.ChangeUserLogicTestDto = exports.TestItemDto = exports.ChangeUserTypingSpeedDto = exports.ChangeUserDto = exports.LoginUserDto = void 0;
 const class_validator_1 = require("class-validator");
 class LoginUserDto {
 }
@@ -70,6 +70,10 @@ __decorate([
     __metadata("design:type", Number)
 ], ChangeUserTypingSpeedDto.prototype, "typing_missings", void 0);
 exports.ChangeUserTypingSpeedDto = ChangeUserTypingSpeedDto;
+class TestItemDto {
+}
+exports.TestItemDto = TestItemDto;
+;
 class ChangeUserLogicTestDto {
 }
 exports.ChangeUserLogicTestDto = ChangeUserLogicTestDto;

@@ -10,7 +10,23 @@ const upload_1 = require("@admin-bro/upload");
 const CustomFileProvider_1 = require("./helpers/CustomFileProvider");
 exports.UserResource = {
     resource: user_entity_1.User,
-    options: {},
+    options: {
+        listProperties: ['email', 'name', 'is_completed', 'is_confirmed'],
+        properties: {
+            personality_test_data: {
+                components: {
+                    show: admin_bro_1.default.bundle('./jsx-components/ShowTestData'),
+                    edit: admin_bro_1.default.bundle('./jsx-components/EditTestData'),
+                }
+            },
+            logic_test_data: {
+                components: {
+                    show: admin_bro_1.default.bundle('./jsx-components/ShowTestData'),
+                    edit: admin_bro_1.default.bundle('./jsx-components/EditTestData'),
+                }
+            }
+        }
+    },
 };
 exports.LogicTestResource = {
     resource: logicTest_entity_1.LogicTest,

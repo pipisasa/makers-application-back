@@ -50,13 +50,21 @@ export class ChangeUserTypingSpeedDto {
   typing_missings: number;
 }
 
+export class TestItemDto {
+  id: any;
+  title: string;
+  answers: Array<{
+    id: string;
+    title: string;
+  }>
+};
+
 export class ChangeUserLogicTestDto {
-  logic_test_data: string;
-  logic_test_correct_answers: number;
+  logic_test_data: TestItemDto[];
 }
 
 export class ChangeUserPersonalityTestDto {
-  personality_test_data: string;
+  personality_test_data: TestItemDto[];
 }
 
 export class ChangeUserVideoAskDto {

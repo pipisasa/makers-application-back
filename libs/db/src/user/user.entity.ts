@@ -5,6 +5,7 @@ import {
   CreatedAt,
   UpdatedAt,
   DataType,
+  PrimaryKey,
 } from 'sequelize-typescript';
 
 @Table
@@ -17,8 +18,9 @@ export class User extends Model<User> {
   @Column({ unique: true, allowNull: false })
   email: string;
 
-  @Column({ allowNull: false, unique: true })
-  google_uid: string;
+  @PrimaryKey
+  @Column({ allowNull: false, unique: true, type: DataType.STRING })
+  _id: string;
 
   @Column
   address: string;
@@ -53,13 +55,13 @@ export class User extends Model<User> {
   @Column
   is_completed: boolean;
 
-  @Column(DataType.JSONB)
+  @Column(DataType.JSON)
   logic_test_data: string;
 
   @Column
   logic_test_correct_answers: number;
 
-  @Column(DataType.JSONB)
+  @Column(DataType.JSON)
   personality_test_data: string;
 
   @Column

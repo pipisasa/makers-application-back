@@ -23,9 +23,10 @@ __decorate([
     __metadata("design:type", String)
 ], User.prototype, "email", void 0);
 __decorate([
-    sequelize_typescript_1.Column({ allowNull: false, unique: true }),
+    sequelize_typescript_1.PrimaryKey,
+    sequelize_typescript_1.Column({ allowNull: false, unique: true, type: sequelize_typescript_1.DataType.STRING }),
     __metadata("design:type", String)
-], User.prototype, "google_uid", void 0);
+], User.prototype, "_id", void 0);
 __decorate([
     sequelize_typescript_1.Column,
     __metadata("design:type", String)
@@ -71,7 +72,7 @@ __decorate([
     __metadata("design:type", Boolean)
 ], User.prototype, "is_completed", void 0);
 __decorate([
-    sequelize_typescript_1.Column(sequelize_typescript_1.DataType.JSONB),
+    sequelize_typescript_1.Column(sequelize_typescript_1.DataType.JSON),
     __metadata("design:type", String)
 ], User.prototype, "logic_test_data", void 0);
 __decorate([
@@ -79,7 +80,7 @@ __decorate([
     __metadata("design:type", Number)
 ], User.prototype, "logic_test_correct_answers", void 0);
 __decorate([
-    sequelize_typescript_1.Column(sequelize_typescript_1.DataType.JSONB),
+    sequelize_typescript_1.Column(sequelize_typescript_1.DataType.JSON),
     __metadata("design:type", String)
 ], User.prototype, "personality_test_data", void 0);
 __decorate([
