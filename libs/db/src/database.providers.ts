@@ -7,17 +7,17 @@ export const databaseProviders = [
   {
     provide: 'SEQUELIZE',
     useFactory: async () => {
-      const dbConfig = parseDbUrl(configuration().db.postgres.heroku);
+      const dbConfig = parseDbUrl(configuration().db.postgres.uri);
       // const dbConfig = parseDbUrl(process.env.DATABASE_URL);
-      console.log("DATABASE_URI", configuration().db.postgres.heroku);
+      console.log("DATABASE_URI", configuration().db.postgres.uri);
 
-      const sequelize = new Sequelize(configuration().db.postgres.heroku, {
+      const sequelize = new Sequelize(configuration().db.postgres.uri, {
         logging: false,
         dialectOptions: {
-          ssl: {
-            require: true,
-            rejectUnauthorized: false // <<<<<<< YOU NEED THIS
-          },
+          // ssl: {
+          //   require: true,
+          //   rejectUnauthorized: false // <<<<<<< YOU NEED THIS
+          // },
         },
         dialect:  'postgres',
         protocol: 'postgres',

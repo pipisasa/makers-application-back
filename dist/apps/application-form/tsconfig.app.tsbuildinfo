@@ -5937,7 +5937,7 @@
         "affectsGlobalScope": false
       },
       "../../../libs/db/src/database.providers.ts": {
-        "version": "6bcd23f84bfb05d700c1aae26f2b6f2b9a2dc97e6b8f6403d93ccaf0a6fa35c6",
+        "version": "d0e080b8cd7a78c9539e85dbaad09a783b6116f05dfd326ff801585aaa27d25d",
         "signature": "01ee40d29ef52833c83f189c23367c2214db7612323bc68a4e57dc094c16be7e",
         "affectsGlobalScope": false
       },

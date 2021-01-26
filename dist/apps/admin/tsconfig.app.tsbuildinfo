@@ -5012,7 +5012,7 @@
         "affectsGlobalScope": false
       },
       "../../../libs/db/src/database.providers.ts": {
-        "version": "6bcd23f84bfb05d700c1aae26f2b6f2b9a2dc97e6b8f6403d93ccaf0a6fa35c6",
+        "version": "d0e080b8cd7a78c9539e85dbaad09a783b6116f05dfd326ff801585aaa27d25d",
         "signature": "01ee40d29ef52833c83f189c23367c2214db7612323bc68a4e57dc094c16be7e",
         "affectsGlobalScope": false
       },
@@ -8702,7 +8702,7 @@
         "affectsGlobalScope": false
       },
       "../../../apps/admin/src/admin.module.ts": {
-        "version": "4815a0092c8139471e12e3240d5e0104ec71d320727ccb737b5f2d40ba8548f2",
+        "version": "84d668e5aa535a27f3ed41fb67fb530c67c53c6dc542bf54d7d91cfab0920824",
         "signature": "d0b72968424fd6d144bbcc2db2996e1f0f8395626b0f3ef4d8aaa54f3e8bba86",
         "affectsGlobalScope": false
       },

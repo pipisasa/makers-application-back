@@ -64,7 +64,7 @@ AdminBro.registerAdapter(SequelizeAdapter);
         },
         // auth: {
         //   authenticate: async (email: string, password: string) => {
-        //     if (email === 'demo@demo.com' && password === 'demo')
+        //     if (email === 'condingiseasy@makers.kg' && password === 'makelovenotwar')
         //       return Promise.resolve({ email });
         //     return null;
         //   },

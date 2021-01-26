@@ -18,16 +18,11 @@ exports.databaseProviders = [
     {
         provide: 'SEQUELIZE',
         useFactory: () => __awaiter(void 0, void 0, void 0, function* () {
-            const dbConfig = parseDbUrl(index_1.default().db.postgres.heroku);
-            console.log("DATABASE_URI", index_1.default().db.postgres.heroku);
-            const sequelize = new sequelize_typescript_1.Sequelize(index_1.default().db.postgres.heroku, {
+            const dbConfig = parseDbUrl(index_1.default().db.postgres.uri);
+            console.log("DATABASE_URI", index_1.default().db.postgres.uri);
+            const sequelize = new sequelize_typescript_1.Sequelize(index_1.default().db.postgres.uri, {
                 logging: false,
-                dialectOptions: {
-                    ssl: {
-                        require: true,
-                        rejectUnauthorized: false
-                    },
-                },
+                dialectOptions: {},
                 dialect: 'postgres',
                 protocol: 'postgres',
                 port: dbConfig.port,
